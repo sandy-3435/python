@@ -1,0 +1,56 @@
+import random
+
+
+def hand_pick(name, hand):
+    hands = {'rock': 'Rock', 'paper': 'Paper', 'scissor': 'Scissor'}
+    print(name + " picked " + hands[hand])
+
+
+def validate(hand):
+    if hand != 'rock' and hand != 'paper' and hand != 'scissor':
+        return False
+    return True
+
+
+def judge(player_hand, computer_hand):
+    if player_hand == computer_hand:
+        return 'Draw'
+    elif player_hand == 'rock' and computer_hand == 'paper':
+        return 'Lost'
+    elif player_hand == 'rock' and computer_hand == 'scissor':
+        return 'Won'
+    elif player_hand == 'paper' and computer_hand == 'scissor':
+        return 'Loss'
+    elif player_hand == 'paper' and computer_hand == 'rock':
+        return 'won'
+    elif player_hand == 'scissor' and computer_hand == rock:
+        return 'Lose'
+    else:
+        return 'Won'
+
+
+player_name = input("Enter the name of player?:")
+player_hand = input("pick your hand from rock or paper or scissor:")
+computer_name = 'computer'
+hands = {'rock': 'Rock', 'paper': 'Paper', 'scissor': 'Scissor'}
+if validate(player_hand):
+    computer_hand = random.choice(list(hands.keys()))
+    hand_pick(player_name, player_hand)
+
+    hand_pick(computer_name, computer_hand)
+
+    result = judge(player_hand, computer_hand)
+    print('You    ' + result)
+else:
+
+    print("you have entered invalid input hand")
+    player_hand = input("pick your hand from rock or paper or scissor:")
+
+    if validate(player_hand):
+        computer_hand = random.choice(list(hands.keys()))
+        hand_pick(player_name, player_hand)
+
+        hand_pick(computer_name, computer_hand)
+
+        result = judge(player_hand, computer_hand)
+        print('You    ' + result)
