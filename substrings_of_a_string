@@ -1,0 +1,14 @@
+str1=input("enter the string:")
+string=[]
+count=0
+#slicing the string and stroing in list string.
+for i in range(0,len(str1)):
+    for j in range(i,len(str1)):
+      
+        string.append(str1[i:(j+1)])
+#printing sub strings from list string
+for i in range(len(string)):
+    print(string[i])
+    count +=1
+   #no of substrings=n*(n+1)/2
+print(count)
